@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server
+#    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 1433:1433
+    environment:
+      SA_PASSWORD: sa
+      ACCEPT_EULA: "Y"
