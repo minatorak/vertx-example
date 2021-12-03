@@ -3,7 +3,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  kotlin ("jvm") version "1.5.10"
+  kotlin ("jvm") version "1.6.0"
   application
   id("com.github.johnrengelman.shadow") version "7.0.0"
 }
@@ -16,7 +16,7 @@ repositories {
 }
 
 val vertxVersion = "4.2.1"
-val junitJupiterVersion = "5.7.0"
+val junitJupiterVersion = "5.8.1"
 
 val mainVerticleName = "com.example.vertx_kotlin.MainVerticle"
 val launcherClassName = "io.vertx.core.Launcher"
@@ -30,17 +30,17 @@ application {
 
 dependencies {
   implementation(platform("io.vertx:vertx-stack-depchain:$vertxVersion"))
-  implementation("io.vertx:vertx-config")
-  implementation("io.vertx:vertx-web-client")
-  implementation("io.vertx:vertx-web")
-  implementation("io.vertx:vertx-lang-kotlin-coroutines")
-  implementation("io.vertx:vertx-micrometer-metrics")
-  implementation("io.vertx:vertx-mssql-client")
-  implementation("io.vertx:vertx-kafka-client")
-  implementation("io.vertx:vertx-lang-kotlin")
-  implementation("io.vertx:vertx-redis-client")
-  implementation(kotlin("stdlib-jdk8"))
-  testImplementation("io.vertx:vertx-junit5")
+  implementation("io.vertx:vertx-config:$vertxVersion")
+  implementation("io.vertx:vertx-web-client:$vertxVersion")
+  implementation("io.vertx:vertx-web:4.2.1")
+  implementation("io.vertx:vertx-lang-kotlin-coroutines:$vertxVersion")
+  implementation("io.vertx:vertx-micrometer-metrics:$vertxVersion")
+  implementation("io.vertx:vertx-mssql-client:$vertxVersion")
+  implementation("io.vertx:vertx-kafka-client:$vertxVersion")
+  implementation("io.vertx:vertx-lang-kotlin:$vertxVersion")
+  implementation("io.vertx:vertx-redis-client:$vertxVersion")
+  implementation(kotlin("stdlib-jdk8", "1.6.0"))
+  testImplementation("io.vertx:vertx-junit5:4.2.1")
   testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
 }
 
