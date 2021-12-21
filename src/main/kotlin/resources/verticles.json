@@ -1,0 +1,11 @@
+{
+  "a": {
+    "message" : "hello",
+    "address": "greeting/hello"
+  },
+  "b": {
+    "message": "bonjour",
+    "address": "greeting/bonjour"
+  },
+    "port" : 9000
+}

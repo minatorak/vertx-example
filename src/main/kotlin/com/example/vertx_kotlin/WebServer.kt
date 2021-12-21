@@ -14,7 +14,7 @@ class WebServer : CoroutineVerticle() {
   override suspend fun start() {
     vertx.createHttpServer()
       .requestHandler(mainRouter(vertx))
-      .listen(config.getInteger("http.port", 8080))
+      .listen(config.getInteger("port", 8080))
       .onSuccess {
         log.info("HTTP server started on port " + it.actualPort())
       }
